@@ -4,7 +4,7 @@ pragma solidity ^0.8.10;
 contract Proposals {
     
     uint256[] public id_numbers;
-    mapping (uint256 => string[]) public proposals; // {id: {title: description}}
+    string[][2] public proposals; // {id: {title: description}}
 
     function proposalAmount() public view returns(uint256) {
         return id_numbers.length;
@@ -13,8 +13,7 @@ contract Proposals {
     function newProposal(string memory title, string memory description) public returns(uint256) {
         uint256 id = id_numbers.length;
         id_numbers.push(id);
-        proposals[id][0] = title;
-        proposals[id][1] = description;
+        proposals.push([title, description]);
 
         return id;
     }
