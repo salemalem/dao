@@ -20,7 +20,7 @@ contract DAOtoken {
     event OwnershipTransferred(address indexed _from, address indexed _to);
     
     constructor() {
-        decimals = 8;
+        decimals = 18;
         totalSupply = 1000000*10**uint256(decimals);
         maxSupply = 1000000*10**uint256(decimals);
         owner = msg.sender;
@@ -130,5 +130,9 @@ contract DAOtoken {
         owner = newOwner;
         
         return success;
+    }
+
+    function getAddressBalance(address myAddress) public view returns (uint256) {
+        return balanceOf[myAddress];
     }
 }
