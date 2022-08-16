@@ -1,7 +1,7 @@
 pragma solidity 0.8.10;
 
 contract DAOtoken {
-    function getAddressBalance(address myAddress) public view returns (uint256) {}
+    function getAddressBalance(address myAddress) external view returns (uint256) {}
 }
 
 // SPDX-License-Identifier: MIT
