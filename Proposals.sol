@@ -36,7 +36,7 @@ contract Proposals {
         return address(dev);
     }
 
-    function newProposal(string storage title, string storage description) external returns(uint256) {
+    function newProposal(string memory title, string memory description) external returns(uint256) {
         proposals.push();
         Proposal storage proposal = proposals[id];
 
